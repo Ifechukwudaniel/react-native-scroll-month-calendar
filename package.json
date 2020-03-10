@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/react-native-nigeria/react-native-number-view.git"
+    "url": "git+https://github.com/Ifechukwudaniel/react-native-scroll-month-calendar.git"
   },
   "keywords": [
     "react-native-scroll-month-calender ",
@@ -20,7 +20,8 @@
   "author": "Ifechuwku daniel",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/react-native-nigeria/react-native-number-view/issues"
+    "url": "https://github.com/Ifechukwudaniel/react-native-scroll-month-calendar/issues"
   },
-  "homepage": "https://github.com/react-native-nigeria/react-native-number-view#readme"
+  "homepage": "https://github.com/Ifechukwudaniel/react-native-scroll-month-calendar#readme",
+  "dependencies": {}
 }
