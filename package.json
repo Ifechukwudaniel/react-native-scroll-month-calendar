@@ -1,0 +1,26 @@
+{
+  "name": "react-native-number-view",
+  "version": "0.0.1",
+  "description": "A simple React Native scroll calender for Months ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/react-native-nigeria/react-native-number-view.git"
+  },
+  "keywords": [
+    "react-native-scroll-month-calender ",
+    "react",
+    "react-native",
+    "month-calender",
+    "scroll-month-calender"
+  ],
+  "author": "Ifechuwku daniel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/react-native-nigeria/react-native-number-view/issues"
+  },
+  "homepage": "https://github.com/react-native-nigeria/react-native-number-view#readme"
+}
