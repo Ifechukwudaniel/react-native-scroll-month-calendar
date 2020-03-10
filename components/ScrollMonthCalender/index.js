@@ -6,9 +6,9 @@
  * @flow
  */
 
-import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, TouchableOpacity} from 'react-native';
-import style from './style'
+import React, {Component, useRef,useEffect, useState} from 'react';
+import {Platform, StyleSheet, Text, View, TouchableOpacity, ScrollView} from 'react-native';
+import styles from './style'
 
 function ScrollMonthCalender({history, enableDefaultStyles , onMonthChange}){
     const scrollViewRef = useRef();
