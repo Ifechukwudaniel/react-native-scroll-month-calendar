@@ -22,8 +22,5 @@
   "bugs": {
     "url": "https://github.com/Ifechukwudaniel/react-native-scroll-month-calendar/issues"
   },
-  "homepage": "https://github.com/Ifechukwudaniel/react-native-scroll-month-calendar#readme",
-  "dependencies": {
-    "react-native-scroll-month-calender": "^0.0.9"
-  }
+  "homepage": "https://github.com/Ifechukwudaniel/react-native-scroll-month-calendar#readme"
 }
