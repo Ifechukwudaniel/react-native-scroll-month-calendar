@@ -7,41 +7,47 @@
  */
 
 import React, {Component, useRef,useEffect, useState} from 'react';
-import {Platform, StyleSheet, Text, View, TouchableOpacity, ScrollView} from 'react-native';
+import {Platform, StyleSheet, Text, View, TouchableOpacity, ScrollView, Animated} from 'react-native';
 import styles from './style'
+// import Animated from 'react-native-reanimated';
 
 function ScrollMonthCalender({history, enableDefaultStyles , onMonthChange}){
     const scrollViewRef = useRef();
     const [monthNumber, setMonthNumber] = useState(0)
     const [heightArray , setArray ]= useState([]);
+    const [scrollX, setScrollX] = useState( new Animated.Value(0))
     let offset= 0
     useEffect(()=>{
+        if (monthNumber<0) 
+         setMonthNumber(0)
+
         if(monthNumber>11)
-          setMonthNumber(0)
-          scrollViewRef.current.scrollTo({
-            x: heightArray[monthNumber]-100,
-            y:0,
-            animated: true,
-        });
+          setMonthNumber(11)
+        scrollViewRef.current.getNode().scrollTo({x:heightArray[monthNumber]-100, y:0})
         onMonthChange()
     },[monthNumber])
 
     return (
        <View style={styles.mainView}>
           <View style= {styles.flexRow} >
-                <ScrollView
+                <Animated.ScrollView
                 horizontal
                 showsHorizontalScrollIndicator={false}
-                scrollEventThrottle={0}
+                scrollEventThrottle={8}
                 ref={scrollViewRef}
-                onMomentumScrollBegin={
+                onScrollEndDrag={
                     (e)=>{
                         var currentOffset = e.nativeEvent.contentOffset.x;
-                        var direction = currentOffset > offset ? 'left' : 'right';
+                        offset= heightArray[monthNumber]
+                        var direction = currentOffset <= offset || currentOffset <= offset-300 ? 'left' : 'right';
                         offset = currentOffset;
                         if(direction==="left"){
+                            setMonthNumber(monthNumber-1)
+                        }
+                         if(direction==="right"){
                             setMonthNumber(monthNumber+1)
                         }
+                       
                     }
                 }
                 >
@@ -78,28 +84,28 @@ function ScrollMonthCalender({history, enableDefaultStyles , onMonthChange}){
                                 </View>)
                         })
                     }
-                </ScrollView>
+                </Animated.ScrollView>
           </View>
                 <View style={{flex:1, alignSelf:"center"}}>
-                    <Text style= {styles.task}>{history[monthNumber]?history[monthNumber].task:0 } Tasks  Completed </Text>
+                    <Text style= {styles.content}>{history[monthNumber]?history[monthNumber].content:"" }</Text>
                 </View>
         </View>
     );
 }
  
 ScrollMonthCalender.defaultProps = {
-   history:[{month:"January", task: 10},
-   {month:"February", task:20},
-   {month:"March", task:1},
-   {month:"April", task:44},
-   {month:"May", task:77},
-   {month:"June", task:9},
-   {month:"July", task:27},
-   {month:"August", task:0},
-   {month:"September", task:8},
-   {month:"October", task:2},
-   {month:"November", task:7},
-   {month:"December", task:26}],
+   history:[{month:"January", content: "jdjjdjdjdjdjdjdjdjdjdjdjd"},
+   {month:"February", content:"jdjjdjdjdjdjdjdjdjdjdjdjd"},
+   {month:"March", content:"jdjjdjdjdjdjdjdjdjdjdjdjd"},
+   {month:"April", content:"jdjjdjdjdjdjdjdjdjdjdjdjd"},
+   {month:"May", content:"jdjjdjdjdjdjdjdjdjdjdjdjd"},
+   {month:"June", content:"jdjjdjdjdjdjdjdjdjdjdjdjd"},
+   {month:"July", content:"jdjjdjdjdjdjdjdjdjdjdjdjd"},
+   {month:"August", content:"jdjjdjdjdjdjdjdjdjdjdjdjd"},
+   {month:"September", content:"jdjjdjdjdjdjdjdjdjdjdjdjd"},
+   {month:"October", content:"jdjjdjdjdjdjdjdjdjdjdjdjd"},
+   {month:"November", content:"jdjjdjdjdjdjdjdjdjdjdjdjd"},
+   {month:"December", content:"jdjjdjdjdjdjdjdjdjdjdjdjd"}],
    enableDefaultStyles:true,
 }
 
