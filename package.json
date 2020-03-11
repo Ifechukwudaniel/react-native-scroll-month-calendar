@@ -1,6 +1,6 @@
 {
   "name": "react-native-scroll-month-calender",
-  "version": "0.0.4",
+  "version": "0.0.8",
   "description": "A simple React Native scroll calender for Months ",
   "main": "index.js",
   "scripts": {
