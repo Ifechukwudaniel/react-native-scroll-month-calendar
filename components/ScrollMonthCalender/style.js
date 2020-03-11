@@ -14,8 +14,6 @@ const style = StyleSheet.create({
     flex:0,
     flexGrow:0,
     height:80,
-    marginTop:40, 
-    marginBottom:40,
     backgroundColor:'#ffffff',
    },
    flexRow:{
