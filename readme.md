@@ -3,11 +3,6 @@
 
 ![image1](img/img2.png)
 
-
-
-
-
-
 The package allows you accept  create a horizontal month calender and its content , quick  easy and fast  .
 
 ### Compatibility
