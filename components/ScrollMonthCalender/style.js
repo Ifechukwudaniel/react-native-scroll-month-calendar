@@ -26,7 +26,7 @@ const style = StyleSheet.create({
        fontSize:14,
        textAlign:'center', 
        opacity:1,
-       fontFamily:"Brother1816-Medium",
+      //  fontFamily:"Brother1816-Medium",
        paddingTop:15,
    },
    monthView:{
@@ -41,7 +41,7 @@ const style = StyleSheet.create({
       width: 180,
       opacity:0.5,
       textAlignVertical:"center",
-      fontFamily:"Brother1816-Medium",
+      // fontFamily:"Brother1816-Medium",
       paddingTop:11,
    }
   });
