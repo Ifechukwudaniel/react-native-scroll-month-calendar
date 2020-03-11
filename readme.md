@@ -54,10 +54,10 @@ class MyApp extends Component {
   }
 }
 
-####
+```
 
 ## Note:
 
-You can also make use of the new props ` enableDefaultStyles` to use the default style.
+You can also make use of the new props `enableDefaultStyles` to use the default style.
 
 ### Don't forget to star, like and share :)
