@@ -1,4 +1,12 @@
-# react-native-scroll-month-calendar
+# react-native-scroll-month-calendar 
+<img src="img/img1.png" alt="image1" style="" />
+
+![image1](img/img2.png)
+
+
+
+
+
 
 The package allows you accept  create a horizontal month calender and its content , quick  easy and fast  .
 
