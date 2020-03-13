@@ -33,12 +33,11 @@ const style = StyleSheet.create({
        borderColor:"#F2F2F3",
        flexWrap:"wrap",
    },
-   monthText:{
+   monthText:{ 
       textAlign: 'center',
       fontSize: 20,
       width: 180,
       opacity:0.5,
-      textAlignVertical:"center",
       // fontFamily:"Brother1816-Medium",
       paddingTop:11,
    }

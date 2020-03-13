@@ -11,7 +11,7 @@ import {Platform, StyleSheet, Text, View, TouchableOpacity, ScrollView, Animated
 import styles from './style'
 // import Animated from 'react-native-reanimated';
 
-function ScrollMonthCalender({history, enableDefaultStyles , onMonthChange}){
+function ScrollMonthCalender({history, enableDefaultStyles , onMonthChange, monthTextStyle, contentTextStyle, style}){
     const scrollViewRef = useRef();
     const [monthNumber, setMonthNumber] = useState(0)
     const [heightArray , setArray ]= useState([]);
@@ -28,7 +28,7 @@ function ScrollMonthCalender({history, enableDefaultStyles , onMonthChange}){
     },[monthNumber])
 
     return (
-       <View style={styles.mainView}>
+       <View style={[styles.mainView, style]}>
           <View style= {styles.flexRow} >
                 <Animated.ScrollView
                 horizontal
@@ -60,7 +60,7 @@ function ScrollMonthCalender({history, enableDefaultStyles , onMonthChange}){
                             const layout = event.nativeEvent.layout;
                             heightArray[i] = layout.x
                             }}>
-                                  <Text style={[styles.monthText,{marginLeft:100,opacity:i==monthNumber?1:0.5 }]}>{item.month}</Text>
+                                  <Text style={[styles.monthText,{marginLeft:100,opacity:i==monthNumber?1:0.5 }, monthTextStyle]}>{item.month}</Text>
                             </View>)
                          }
                          if(i === history.length - 1) {
@@ -87,7 +87,7 @@ function ScrollMonthCalender({history, enableDefaultStyles , onMonthChange}){
                 </Animated.ScrollView>
           </View>
                 <View style={{flex:1, alignSelf:"center"}}>
-                    <Text style= {styles.content}>{history[monthNumber]?history[monthNumber].content:"" }</Text>
+                    <Text style= {[styles.content,]}>{history[monthNumber]?history[monthNumber].content:"" }</Text>
                 </View>
         </View>
     );
@@ -107,6 +107,9 @@ ScrollMonthCalender.defaultProps = {
    {month:"November", content:"jdjjdjdjdjdjdjdjdjdjdjdjd"},
    {month:"December", content:"jdjjdjdjdjdjdjdjdjdjdjdjd"}],
    enableDefaultStyles:true,
+   monthTextStyle:{},
+   contentTextStyle:{},
+   style:{}
 }
 
 
