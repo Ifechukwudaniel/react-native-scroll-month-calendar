@@ -51,7 +51,8 @@ class MyApp extends Component {
   render() {
     return (
       <View style={{flex: 1}}>
-         <ScrollMonthCalender history={myHistory} onMonthChange={()=>{}}/>
+         <ScrollMonthCalender history={myHistory} monthTextStyle={}, contentTextStyle={} 
+         style={{marginTop:100}} onMonthChange={()=>{}}/>
         />
       </View>
     );
