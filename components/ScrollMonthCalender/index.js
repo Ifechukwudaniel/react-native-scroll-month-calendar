@@ -70,7 +70,7 @@ function ScrollMonthCalender({history, enableDefaultStyles , onMonthChange, mont
                             const layout = event.nativeEvent.layout;
                             heightArray[i] = layout.x
                             }}>
-                                 <Text style={[styles.monthText,{marginRight:100, opacity:i==monthNumber?1:0.5 }]}>{item.month}</Text>
+                                 <Text style={[styles.monthText,{marginRight:100, opacity:i==monthNumber?1:0.5 }], monthTextStyle}>{item.month}</Text>
                             </View>)
                          }
                          else 
@@ -80,7 +80,7 @@ function ScrollMonthCalender({history, enableDefaultStyles , onMonthChange, mont
                                 const layout = event.nativeEvent.layout;
                                 heightArray[i] = layout.x
                                 }}>
-                                    <Text style={[styles.monthText, {opacity:i==monthNumber?1:0.5 }]}>{item.month}</Text>
+                                    <Text style={[styles.monthText, {opacity:i==monthNumber?1:0.5 }], monthTextStyle}>{item.month}</Text>
                                 </View>)
                         })
                     }
