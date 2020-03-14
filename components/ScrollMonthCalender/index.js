@@ -24,7 +24,7 @@ function ScrollMonthCalender({history, enableDefaultStyles , onMonthChange, mont
         if(monthNumber>11)
           setMonthNumber(11)
         scrollViewRef.current.getNode().scrollTo({x:heightArray[monthNumber]-100, y:0})
-        onMonthChange()
+        onMonthChange(history[monthNumber].month)
     },[monthNumber])
 
     return (
