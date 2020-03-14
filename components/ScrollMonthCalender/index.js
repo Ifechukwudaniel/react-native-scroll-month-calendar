@@ -19,12 +19,12 @@ function ScrollMonthCalender({history, enableDefaultStyles , onMonthChange, mont
     let offset= 0
     useEffect(()=>{
         if (monthNumber<0) 
-         setMonthNumber(0)
+          setMonthNumber(0)
 
         if(monthNumber>11)
           setMonthNumber(11)
         scrollViewRef.current.getNode().scrollTo({x:heightArray[monthNumber]-100, y:0})
-        onMonthChange(history[monthNumber].month)
+        onMonthChange(history[monthNumber]? history[monthNumber].month : '' )
     },[monthNumber])
 
     return (
